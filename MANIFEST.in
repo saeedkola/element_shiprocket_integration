@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include element_shiprocket_integration *.css
+recursive-include element_shiprocket_integration *.csv
+recursive-include element_shiprocket_integration *.html
+recursive-include element_shiprocket_integration *.ico
+recursive-include element_shiprocket_integration *.js
+recursive-include element_shiprocket_integration *.json
+recursive-include element_shiprocket_integration *.md
+recursive-include element_shiprocket_integration *.png
+recursive-include element_shiprocket_integration *.py
+recursive-include element_shiprocket_integration *.svg
+recursive-include element_shiprocket_integration *.txt
+recursive-exclude element_shiprocket_integration *.pyc
