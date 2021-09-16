@@ -16,17 +16,19 @@ app_license = "MIT"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/element_shiprocket_integration/css/element_shiprocket_integration.css"
-# app_include_js = "/assets/element_shiprocket_integration/js/element_shiprocket_integration.js"
-
+app_include_js = "/assets/js/element_shiprocket_integration.js"
+app_include_css = ["/assets/css/custom_css.css"]
 # include js, css files in header of web template
 # web_include_css = "/assets/element_shiprocket_integration/css/element_shiprocket_integration.css"
 # web_include_js = "/assets/element_shiprocket_integration/js/element_shiprocket_integration.js"
-
 # include js in page
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {
+	"Sales Order" : "public/js/sales_order.js"
+}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}

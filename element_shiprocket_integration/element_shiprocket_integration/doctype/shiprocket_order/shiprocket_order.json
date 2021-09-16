@@ -1,0 +1,359 @@
+{
+ "autoname": "SHIP-.######",
+ "creation": "2020-06-21 23:35:36.226966",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "column_break_2",
+  "sales_order",
+  "data_4",
+  "shipping_info_section",
+  "payment_type",
+  "column_break_3",
+  "shipping_mode",
+  "section_break_5",
+  "request_pickup",
+  "column_break_7",
+  "print_label",
+  "column_break_9",
+  "generate_manifest",
+  "customer_section",
+  "customer",
+  "column_break_4",
+  "customer_name",
+  "address_info_section",
+  "from_address_heading",
+  "company_address",
+  "pickup_postcode",
+  "column_break_8",
+  "billing_address_heading",
+  "customer_address",
+  "billing_customer_name",
+  "billing_postcode",
+  "column_break_11",
+  "shipping_address_heading",
+  "shipping_address",
+  "shipping_postcode",
+  "items_section",
+  "items",
+  "html_section",
+  "courier_serviceabilty",
+  "html",
+  "package_info_section",
+  "package_dimension",
+  "weight",
+  "column_break_20",
+  "length",
+  "breadth",
+  "height",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer_section",
+   "fieldtype": "Section Break",
+   "label": "Customer"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Shiprocket Order",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "html_section",
+   "fieldtype": "Section Break",
+   "label": "HTML"
+  },
+  {
+   "fieldname": "html",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "courier_serviceabilty",
+   "fieldtype": "Button",
+   "label": "Get Available Couriers"
+  },
+  {
+   "fieldname": "address_info_section",
+   "fieldtype": "Section Break",
+   "label": "Address Info"
+  },
+  {
+   "fetch_from": "company_address.pincode",
+   "fetch_if_empty": 1,
+   "fieldname": "pickup_postcode",
+   "fieldtype": "Data",
+   "label": "Pickup Postcode"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "billing_postcode",
+   "fieldtype": "Data",
+   "label": "Billing Postcode"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shipping_address",
+   "fieldtype": "Link",
+   "label": "Shipping Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "shipping_postcode",
+   "fieldtype": "Data",
+   "label": "Shipping Postcode"
+  },
+  {
+   "fieldname": "package_info_section",
+   "fieldtype": "Section Break",
+   "label": "Package Info"
+  },
+  {
+   "fieldname": "package_dimension",
+   "fieldtype": "Link",
+   "label": "Package Dimensions",
+   "options": "Package Dimensions"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Package Weight"
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "package_dimension.length",
+   "fetch_if_empty": 1,
+   "fieldname": "length",
+   "fieldtype": "Float",
+   "label": "Length"
+  },
+  {
+   "fetch_from": "package_dimension.breadth",
+   "fetch_if_empty": 1,
+   "fieldname": "breadth",
+   "fieldtype": "Float",
+   "label": "Breadth"
+  },
+  {
+   "fetch_from": "package_dimension.height",
+   "fetch_if_empty": 1,
+   "fieldname": "height",
+   "fieldtype": "Float",
+   "label": "Height"
+  },
+  {
+   "fieldname": "shipping_info_section",
+   "fieldtype": "Section Break",
+   "label": "Shipping Info"
+  },
+  {
+   "fieldname": "payment_type",
+   "fieldtype": "Select",
+   "label": "Payment Type",
+   "options": "\nPrepaid\nCOD",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shipping_mode",
+   "fieldtype": "Select",
+   "label": "Shipping Mode",
+   "options": "\nAir\nSurface"
+  },
+  {
+   "fieldname": "items_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Shiprocket Order Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company_address",
+   "fieldtype": "Link",
+   "label": "Company Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "from_address_heading",
+   "fieldtype": "Heading",
+   "label": "From Address"
+  },
+  {
+   "fieldname": "billing_address_heading",
+   "fieldtype": "Heading",
+   "label": "Billing Address"
+  },
+  {
+   "fieldname": "customer_address",
+   "fieldtype": "Link",
+   "label": "Customer Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "shipping_address_heading",
+   "fieldtype": "Heading",
+   "label": "Shipping Address"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "request_pickup",
+   "fieldtype": "Check",
+   "label": "Request Pickup?"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "print_label",
+   "fieldtype": "Check",
+   "label": "Generate Label?"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "generate_manifest",
+   "fieldtype": "Check",
+   "label": "Genrate Manifest?"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "billing_customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "options": "Sales Order",
+   "reqd": 1
+  },
+  {
+   "fieldname": "data_4",
+   "fieldtype": "Data"
+  }
+ ],
+ "is_submittable": 1,
+ "modified": "2020-06-28 21:29:39.493265",
+ "modified_by": "Administrator",
+ "module": "Element Shiprocket Integration",
+ "name": "Shiprocket Order",
+ "name_case": "UPPER CASE",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Shipping Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Shipping User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "customer",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "customer",
+ "track_changes": 1
+}

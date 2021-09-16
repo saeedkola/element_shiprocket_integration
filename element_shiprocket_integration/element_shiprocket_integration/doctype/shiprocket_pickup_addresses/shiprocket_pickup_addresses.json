@@ -1,0 +1,39 @@
+{
+ "creation": "2020-07-05 20:45:39.087028",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "pickup_location",
+  "address"
+ ],
+ "fields": [
+  {
+   "fieldname": "pickup_location",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Pickup Location",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Address",
+   "options": "Address",
+   "reqd": 1
+  }
+ ],
+ "istable": 1,
+ "modified": "2020-07-05 20:45:39.087028",
+ "modified_by": "Administrator",
+ "module": "Element Shiprocket Integration",
+ "name": "Shiprocket Pickup Addresses",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

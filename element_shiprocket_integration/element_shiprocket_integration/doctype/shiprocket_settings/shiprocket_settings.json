@@ -1,6 +1,8 @@
 {
+ "color": "purple",
  "creation": "2020-06-21 23:04:32.186465",
  "doctype": "DocType",
+ "document_type": "Setup",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
@@ -8,7 +10,15 @@
   "email",
   "column_break_3",
   "password",
-  "token"
+  "column_break_5",
+  "get_token",
+  "column_break_7",
+  "token",
+  "channel_break",
+  "channel_id",
+  "section_break_9",
+  "get_pickup_addresses",
+  "shiprocket_addresses"
  ],
  "fields": [
   {
@@ -31,15 +41,53 @@
    "label": "Password"
   },
   {
-   "default": "dhaKGAKSDGAKSDGAKD",
    "fieldname": "token",
    "fieldtype": "Small Text",
    "label": "Bearer Token",
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "get_token",
+   "fieldtype": "Button",
+   "label": "Get Token"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break",
+   "label": "Shiprocket Pickup Addresses"
+  },
+  {
+   "fieldname": "get_pickup_addresses",
+   "fieldtype": "Button",
+   "hidden": 1,
+   "label": "Get Shiprocket Pickup Addresses"
+  },
+  {
+   "fieldname": "shiprocket_addresses",
+   "fieldtype": "Table",
+   "options": "Shiprocket Pickup Addresses"
+  },
+  {
+   "fieldname": "channel_break",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "channel_id",
+   "fieldtype": "Data",
+   "label": "Default Channel ID"
   }
  ],
+ "icon": "fa fa-cog",
  "issingle": 1,
- "modified": "2020-06-21 23:05:21.248537",
+ "modified": "2020-07-05 20:50:07.858505",
  "modified_by": "Administrator",
  "module": "Element Shiprocket Integration",
  "name": "Shiprocket Settings",
@@ -62,6 +110,16 @@
    "print": 1,
    "read": 1,
    "role": "Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Shipping Manager",
    "share": 1,
    "write": 1
   }

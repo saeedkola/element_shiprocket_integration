@@ -1,0 +1,91 @@
+{
+ "creation": "2020-06-26 21:34:53.435652",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "item_name",
+  "qty",
+  "gst_hsn_code",
+  "rate",
+  "item_tax_rate",
+  "discount_amount",
+  "data_8"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "columns": 3,
+   "fetch_from": "item_code.item_name",
+   "fetch_if_empty": 1,
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Name",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantity",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "rate",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Rate",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fetch_from": "item_code.gst_hsn_code",
+   "fetch_if_empty": 1,
+   "fieldname": "gst_hsn_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "HSN"
+  },
+  {
+   "columns": 1,
+   "fieldname": "item_tax_rate",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Tax"
+  },
+  {
+   "columns": 1,
+   "fieldname": "discount_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Discount"
+  },
+  {
+   "fieldname": "data_8",
+   "fieldtype": "Data"
+  }
+ ],
+ "istable": 1,
+ "modified": "2020-06-26 22:33:28.993644",
+ "modified_by": "Administrator",
+ "module": "Element Shiprocket Integration",
+ "name": "Shiprocket Order Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,0 +1,133 @@
+<div class="clearfix">
+	<div class="row">
+		<div class="col-md-12">
+			<h1>Available Courier Companies</h1>
+				{% for c in data.available_courier_companies %}				
+					<div class="panel">
+						<div class="panel-heading">
+							<div class="radio-inline">
+							  <label><input type="radio" name="courier_comapany_option" value="{{c.courier_company_id}}">{{c.courier_name}}</label>
+							</div>
+							<span class="label pull-right">
+								<a data-toggle="collapse" href="#courier-{{c.courier_company_id}}">
+									<i class="fa fa-bars"></i>
+								</a>
+							</span>
+							<span class="label label-primary pull-right">{{ frappe.format(c.rate,'Currency') }}</span>
+							{%- if c.cod -%}
+								<span class="label label-primary pull-right">COD</span>
+							{%- endif -%}
+							{%- if c.is_surface -%}
+								<span class="label label-info pull-right">Surface</span>
+							{%- else -%}
+								<span class="label label-success pull-right">Air</span>
+							{%- endif -%}
+							{%- if c.is_rto_address_available -%}
+								<span class="label label-primary pull-right">RTO</span>
+							{%- endif -%}
+							{% if c.courier_company_id == data.recommended_courier_company_id %}
+								<span class="label label-success">Recommended</span>
+								<span class="label label-success">{{data.recommended_by.title}}</span>
+							{%- endif -%}
+							{% if c.courier_company_id == data.shiprocket_recommended_courier_id %}
+								<span class="label label-success">Shiprocket <i class="fa fa-check"></i></span>								
+							{%- endif -%}
+							<span class="label label-info pull-right">{{c.estimated_delivery_days}} Days</span>
+						</div>
+						<div class="panel-collapse collapse" id="courier-{{c.courier_company_id}}">
+							<div class="panel-body" style="padding: 0;">
+								<div class="col-md-4">
+									<table class="table courier-info-table">
+										<tr>
+											<td>Rating</td>
+											<td>{{c.rating}}</td>
+										</tr>
+										<tr>
+											<td>Delivery Performance</td>
+											<td>{{c.delivery_performance}}</td>
+										</tr>
+										<tr>
+											<td>Pickup Performance</td>
+											<td>{{c.pickup_performance}}</td>									
+										</tr>
+										<tr>
+											<td>RTO Performance</td>
+											<td>{{c.rto_performance}}</td>
+										</tr>
+										<tr>
+											<td>Tracking Performance</td>
+											<td>{{c.tracking_performance}}</td>
+										</tr>
+									</table>
+								</div>
+								<div class="col-md-4">
+									<table class="table courier-info-table">
+										<tr>
+											<td>ETD</td>
+											<td>{{c.etd}} ({{c.estimated_delivery_days}} D)</td>
+										</tr>
+										<tr>
+											<td>Del. Boy Contact</td>
+											<td>{{c.delivery_boy_contact}}</td>
+										</tr>
+										<tr>
+											<td>Realtime Tracking</td>
+											<td>{{c.realtime_tracking}}</td>
+										</tr>
+										<tr>
+											<td>POD</td>
+											<td>{{c.pod_available}}</td>
+										</tr>
+										
+									</table>
+								</div>
+								<div class="col-md-4">
+									<table class="table courier-info-table courier-rates-table">
+										<tr>
+											<td>Freight Charges</td>
+											<td>{{ frappe.format(c.freight_charge,'Currency') }}</td>
+										</tr>
+										<tr>
+											<td>COD Charges</td>
+											<td>{{ frappe.format(c.cod_charges,'Currency') }} ({{c.cod_multiplier}}x)</td>
+										</tr>
+										<tr>
+											<td>RTO Charges</td>
+											<td>{{ frappe.format(c.rto_charges,'Currency') }}</td>
+										</tr>
+										<tr>
+											<td><strong>Rate</strong></td>
+											<td><strong>{{ frappe.format(c.rate,'Currency') }}</strong></td>
+										</tr>
+										
+									</table>
+								</div>
+							</div>	
+						</div>
+					</div>
+				{% endfor %}
+		</div>
+		
+
+	</div>
+</div>
+<style type="text/css">
+	.courier-info-table{
+		margin: 0px !important;
+	}
+	.courier-info-table td{
+		padding: 4px 0 !important;
+	}
+	span.label{
+		margin: 0px 1px !important;
+	}
+	.courier-rates-table td:nth-child(2){
+		text-align: right;
+	}
+	.panel{
+		margin-bottom: 2px !important;
+	}
+	.panel-heading{
+		padding: 2px 4px !important;
+	}
+</style>
